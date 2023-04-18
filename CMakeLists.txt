@@ -5,4 +5,15 @@ project(
     VERSION 1.0
     LANGUAGES CXX)
 
-add_executable(FileBrowser program.cpp)
+add_executable(FileBrowser)
+
+target_sources(FileBrowser 
+    PRIVATE 
+        program.cpp)
+
+target_sources(FileBrowser 
+    PRIVATE 
+        SystemInfo.cpp
+    PUBLIC
+        SystemInfo.hpp
+    )
