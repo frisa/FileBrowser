@@ -11,5 +11,6 @@ int main()
     std::cout << "File Browser application has started" << std::endl;
     std::unique_ptr<SystemInfo> si =  std::make_unique<SystemInfo>();
     si->printComputerName();
+    si->printCurrentDate();
     return 0;
 }
