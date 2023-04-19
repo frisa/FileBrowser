@@ -1,16 +1,17 @@
 /*
     this is the main application of the file browser
 */
-#include "SystemInfo.hpp"
-#include "TestCls.hpp"
-
 #include <iostream>
 #include <memory>
 
+#include "Cpp11_AutoDecltype.hpp"
+
 int main()
 {
-    TestCls tc;
-    tc.auto_decltype();
+    std::unique_ptr<Cpp11_AutoDecltype> autoDecltype = std::make_unique<Cpp11_AutoDecltype>();
 
+    autoDecltype->auto_TemplateArgumentDeduction();
+    //autoDecltype->auto_SimpleTypeDeduction();
+    //autoDecltype->auto_ConstTypeDeduction();
     return 0;
 }

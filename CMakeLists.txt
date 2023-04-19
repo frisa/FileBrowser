@@ -14,8 +14,8 @@ target_sources(FileBrowser
 target_sources(FileBrowser 
     PRIVATE 
         SystemInfo.cpp
-        TestCls.cpp
+        Cpp11_AutoDecltype.cpp
     PUBLIC
         SystemInfo.hpp
-        TestCls.hpp
+        Cpp11_AutoDecltype.hpp
     )
