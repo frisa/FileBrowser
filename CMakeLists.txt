@@ -14,6 +14,8 @@ target_sources(FileBrowser
 target_sources(FileBrowser 
     PRIVATE 
         SystemInfo.cpp
+        TestCls.cpp
     PUBLIC
         SystemInfo.hpp
+        TestCls.hpp
     )
