@@ -8,11 +8,9 @@ project(
 add_executable(FileBrowser)
 
 target_sources(FileBrowser 
-    PRIVATE 
-        program.cpp)
-
-target_sources(FileBrowser 
-    PRIVATE 
+    PRIVATE
+        #program.cpp
+        qtprogram.cpp 
         SystemInfo.cpp
         Cpp11_AutoDecltype.cpp
     PUBLIC
@@ -25,3 +23,9 @@ set_property(
         FileBrowser
     PROPERTY
         CXX_STANDARD 17)
+
+# Qt specific stuff
+set(CMAKE_PREFIX_PATH "/Users/jan/Qt/6.5.0/macos/lib/cmake/Qt6")
+find_package(Qt6 REQUIRED COMPONENTS Core)
+qt_standard_project_setup()
+target_link_libraries(FileBrowser PRIVATE Qt6::Core)
