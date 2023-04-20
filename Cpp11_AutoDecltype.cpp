@@ -119,7 +119,7 @@ void Cpp11_AutoDecltype::auto_TemplateArgumentDeduction()
                             // where T is deduced from the type of p
 
     // C++ 11 usage for unnamed types in the lambda expressions
-    auto lambda = [](int x){return x+3}
+    //auto lambda = [](int x){return x+3};
 }
 
 void Cpp11_AutoDecltype::auto_SimpleTypeDeduction()

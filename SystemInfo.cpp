@@ -7,6 +7,8 @@
 #include <chrono>
 #include <ctime>
 
+#define HOST_NAME_MAX 255
+
 std::string SystemInfo::getComputerName()
 {
     char hostName[HOST_NAME_MAX];

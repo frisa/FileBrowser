@@ -19,3 +19,9 @@ target_sources(FileBrowser
         SystemInfo.hpp
         Cpp11_AutoDecltype.hpp
     )
+
+set_property(
+    TARGET
+        FileBrowser
+    PROPERTY
+        CXX_STANDARD 17)
