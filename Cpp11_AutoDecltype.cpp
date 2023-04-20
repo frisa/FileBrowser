@@ -112,6 +112,14 @@ void Cpp11_AutoDecltype::auto_TemplateArgumentDeduction()
     x = 123;                // then x refers to e[0], y refers to e[1]
     auto& [xr, yr] = a;     // xr refers to a[0], yr referes to a[1]
     xr =  123;              // will change a[0]
+
+    // C++ 11 type deduction in function declarator with trailing return type
+    auto (*p)()->int;       // declares p as pointer to function returning int
+    auto (*q)()->auto = p;  // declares q as pointer to function returning T
+                            // where T is deduced from the type of p
+
+    // C++ 11 usage for unnamed types in the lambda expressions
+    auto lambda = [](int x){return x+3}
 }
 
 void Cpp11_AutoDecltype::auto_SimpleTypeDeduction()
