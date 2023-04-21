@@ -1,6 +1,6 @@
 {
-    //"cmake.cmakePath": "/opt/homebrew/bin/cmake",
-    "cmake.cmakePath" : "/usr/bin/cmake",
+    "cmake.cmakePath": "/opt/homebrew/bin/cmake",
+    //"cmake.cmakePath" : "/usr/bin/cmake",
     "files.associations": {
         "type_traits": "cpp",
         "array": "cpp",
