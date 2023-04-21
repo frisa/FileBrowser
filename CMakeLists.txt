@@ -1,35 +1,29 @@
 cmake_minimum_required(VERSION 3.1...3.26)
 
-project(
-    FileBrowser
-    VERSION 1.0
-    LANGUAGES CXX)
-
-add_executable(FileBrowser)
-
-target_sources(FileBrowser 
-    PRIVATE
-        #program.cpp
-        qtprogram.cpp 
-        SystemInfo.cpp
-        Cpp11_AutoDecltype.cpp
-    PUBLIC
-        SystemInfo.hpp
-        Cpp11_AutoDecltype.hpp
-    )
-
-set_property(
-    TARGET
-        FileBrowser
-    PROPERTY
-        CXX_STANDARD 17)
-
-# Qt specific stuff
 IF(APPLE)
     set(CMAKE_PREFIX_PATH "/Users/jan/Qt/6.5.0/macos/lib/cmake/Qt6")
 ELSE()
     set(CMAKE_PREFIX_PATH "/home/jan/Qt/6.5.0/gcc_64")
 ENDIF()
-find_package(Qt6 REQUIRED COMPONENTS Core)
+
+project(FileBrowser VERSION 1.0 LANGUAGES CXX)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Gui)
+
+qt_add_executable(fileBrowser ./src/qt_program.cpp)
+
+target_sources(fileBrowser
+    PRIVATE
+        ./src/qt_program.cpp 
+    PUBLIC
+    )
+
 qt_standard_project_setup()
-target_link_libraries(FileBrowser PRIVATE Qt6::Core)
+qt_add_qml_module(fileBrowser 
+    URI qml
+    QML_FILES ./qml/main.qml)
+
+target_link_libraries(fileBrowser PRIVATE Qt6::Quick Qt6::Gui)
