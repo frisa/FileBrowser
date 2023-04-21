@@ -25,8 +25,11 @@ set_property(
         CXX_STANDARD 17)
 
 # Qt specific stuff
-#set(CMAKE_PREFIX_PATH "/Users/jan/Qt/6.5.0/macos/lib/cmake/Qt6")
-set(CMAKE_PREFIX_PATH "/home/jan/Qt/6.5.0/gcc_64")
+IF(APPLE)
+    set(CMAKE_PREFIX_PATH "/Users/jan/Qt/6.5.0/macos/lib/cmake/Qt6")
+ELSE()
+    set(CMAKE_PREFIX_PATH "/home/jan/Qt/6.5.0/gcc_64")
+ENDIF()
 find_package(Qt6 REQUIRED COMPONENTS Core)
 qt_standard_project_setup()
 target_link_libraries(FileBrowser PRIVATE Qt6::Core)
