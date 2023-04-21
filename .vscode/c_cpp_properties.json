@@ -18,6 +18,21 @@
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64",
             "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         }
     ],
     "version": 4
