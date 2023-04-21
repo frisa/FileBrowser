@@ -46,9 +46,16 @@ ApplicationWindow {
     }
     StackView{
         anchors.fill: parent
-        initialItem: Rectangle{
+        initialItem: ListView{
             anchors.fill: parent
-            color: "green"
+            width: 200
+            height: 300
+            model: model
+            delegate: Text{
+                text: name + "." + extension
+                color: "red"
+            }
+
         }
     }
 }
