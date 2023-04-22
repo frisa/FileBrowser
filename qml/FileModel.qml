@@ -1,3 +1,5 @@
+import QtQuick
+
 ListModel{
     ListElement{
         name: "FirstFile"

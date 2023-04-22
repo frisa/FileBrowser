@@ -50,7 +50,7 @@ ApplicationWindow {
             anchors.fill: parent
             width: 200
             height: 300
-            model: model
+            model: FileModel{}
             delegate: Text{
                 text: name + "." + extension
                 color: "red"
