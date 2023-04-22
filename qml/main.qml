@@ -47,27 +47,27 @@ ApplicationWindow {
     }
     StackView{
         anchors.fill: parent
-
-        Rectangle{
-            width: 180
-            height: 200
-            Component{
-                id: fileDelegate
-                Item{
-                    width: 180
-                    height: 40
-                    Column{
-                        Text{ text: "<b>Name: </b>" + name}
-                        Text{ text: "<b>Extension: </b>" + extension}
-                    }
-                }
-            }
-        }
         initialItem: ListView{
+            id: listView
             anchors.fill: parent
             width: 200
             height: 300
             model: FileModel{}
+            Component{
+                id: fileDelegate
+                Rectangle{
+                    id: wrapper
+                    width: 180
+                    height: fileInfo.height
+                    color: ListView.isCurrentItem ? "black" : "red"
+                    Text{
+                        id: fileInfo
+                        text: name + "." + extension
+                        color: wrapper.ListView.isCurrentItem ? "red" : "black"
+                    }
+                }
+            }
+
             delegate: fileDelegate
             highlight: Rectangle{ color: "lightsteelblue"; radius: 5}
             focus: true
