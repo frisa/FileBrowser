@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+
 ApplicationWindow {
     width: 640
     height: 480
@@ -46,16 +47,30 @@ ApplicationWindow {
     }
     StackView{
         anchors.fill: parent
+
+        Rectangle{
+            width: 180
+            height: 200
+            Component{
+                id: fileDelegate
+                Item{
+                    width: 180
+                    height: 40
+                    Column{
+                        Text{ text: "<b>Name: </b>" + name}
+                        Text{ text: "<b>Extension: </b>" + extension}
+                    }
+                }
+            }
+        }
         initialItem: ListView{
             anchors.fill: parent
             width: 200
             height: 300
             model: FileModel{}
-            delegate: Text{
-                text: name + "." + extension
-                color: "red"
-            }
-
+            delegate: fileDelegate
+            highlight: Rectangle{ color: "lightsteelblue"; radius: 5}
+            focus: true
         }
     }
 }
