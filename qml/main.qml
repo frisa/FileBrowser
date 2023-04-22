@@ -59,11 +59,11 @@ ApplicationWindow {
                     id: wrapper
                     width: 180
                     height: fileInfo.height
-                    color: ListView.isCurrentItem ? "black" : "red"
+                    color: ListView.isCurrentItem ? "black" : "white"
                     Text{
                         id: fileInfo
                         text: name + "." + extension
-                        color: wrapper.ListView.isCurrentItem ? "red" : "black"
+                        color: wrapper.ListView.isCurrentItem ? "white" : "black"
                     }
                 }
             }
