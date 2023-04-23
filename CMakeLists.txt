@@ -13,12 +13,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Gui)
 
-qt_add_executable(fileBrowser ./src/qt_program.cpp)
+qt_add_executable(fileBrowser ./src/program.cpp)
 
 target_sources(fileBrowser
     PRIVATE
-        ./src/qt_program.cpp 
+        ./src/program.cpp
+        ./src/SystemInfo.cpp
     PUBLIC
+        ./inc/SystemInfo.hpp
     )
 
 qt_standard_project_setup()
@@ -26,4 +28,4 @@ qt_add_qml_module(fileBrowser
     URI qml
     QML_FILES ./qml/main.qml)
 
-target_link_libraries(fileBrowser PRIVATE Qt6::Quick Qt6::Gui)
+target_link_libraries(fileBrowser PRIVATE Qt6::Gui Qt6::Quick)

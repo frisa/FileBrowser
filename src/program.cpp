@@ -1,17 +1,14 @@
-/*
-    this is the main application of the file browser
-*/
-#include <iostream>
-#include <memory>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 
-#include "Cpp11_AutoDecltype.hpp"
-
-int main()
+int main(int argc, char **argv)
 {
-    std::unique_ptr<Cpp11_AutoDecltype> autoDecltype = std::make_unique<Cpp11_AutoDecltype>();
-
-    autoDecltype->auto_TemplateArgumentDeduction();
-    //autoDecltype->auto_SimpleTypeDeduction();
-    //autoDecltype->auto_ConstTypeDeduction();
-    return 0;
+    QGuiApplication app(argc, argv);
+    QQmlApplicationEngine engine;
+    engine.load(QUrl::fromLocalFile("../qml/main.qml"));
+    return app.exec();
 }
+
+// some notes
+//https://lightrun.com/solutions/3fon3fonov-exostriker-qtqpaplugin-could-not-load-the-qt-platform-plugin-xcb-in-even-though-it-was-found-ubuntu-r/
+// sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
