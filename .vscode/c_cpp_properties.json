@@ -3,7 +3,9 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "~/Qt/6.5.0/macos/lib/QtCore.framework/Headers/**",
+                "~/Qt/6.5.0/macos/lib/QtGui.framework/Headers/**"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -33,7 +35,8 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-clang-x64",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

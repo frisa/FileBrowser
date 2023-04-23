@@ -14,6 +14,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Gui)
 
 qt_add_executable(fileBrowser ./src/program.cpp)
+target_include_directories(fileBrowser 
+    PRIVATE
+        "~/Qt/6.5.0/macos/lib/QtCore.framework/Headers/**"
+        "~/Qt/6.5.0/macos/lib/QtGui.framework/Headers/**"
+    )
 
 target_sources(fileBrowser
     PRIVATE
