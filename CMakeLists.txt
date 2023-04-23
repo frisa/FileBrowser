@@ -17,6 +17,7 @@ qt_add_executable(fileBrowser ./src/program.cpp)
 target_include_directories(fileBrowser 
     PRIVATE
         "~/Qt/6.5.0/macos/lib/QtCore.framework/Headers/**"
+        "~/Qt/6.5.0/macos/lib/QtQml.framework/Headers/**"
         "~/Qt/6.5.0/macos/lib/QtGui.framework/Headers/**"
     )
 
