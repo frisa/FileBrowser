@@ -1,17 +1,15 @@
-#include "../inc/FileSystem.hpp"
 #include <QDebug>
+#include <filesystem>
+#include "FileSystem.hpp"
 
 void FileSystemCls::doGetCurrentPath()
 {
     qDebug() << "Get current path has been called";
 }
 
-void FileSystemCls::setCurrentPath(const QString& value)
-{
-    m_currentPath = value;
-}
-
 QString FileSystemCls::currentPath() const
 {
-    return m_currentPath;
+    std::filesystem::path currentPath;
+    currentPath = std::filesystem::current_path();
+    return QString(currentPath.c_str());
 }

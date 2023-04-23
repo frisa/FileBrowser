@@ -1,4 +1,4 @@
-#include "../inc/SystemInfo.hpp"
+#include "SystemInfo.hpp"
 #include <iostream>
 
 // linux specific

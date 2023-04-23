@@ -3,14 +3,14 @@ import QtQuick
 ListModel{
     ListElement{
         name: "FirstFile"
-        extension: "exe"
+        ext: "exe"
     }
     ListElement{
         name: "SecondFile"
-        extension: "png"
+        ext: "png"
     }
     ListElement{
         name: "ThirdFile"
-        extension: "jpg"
+        ext: "jpg"
     }
 }

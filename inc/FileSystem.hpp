@@ -6,7 +6,7 @@
 
 class FileSystemCls : public QObject{
     Q_OBJECT
-    Q_PROPERTY(QString currentPath READ currentPath WRITE setCurrentPath NOTIFY currentPathChanged)
+    Q_PROPERTY(QString currentPath READ currentPath NOTIFY currentPathChanged)
 
 private:
     QString m_currentPath;
@@ -14,7 +14,6 @@ private:
 public:
     FileSystemCls(): m_currentPath("/root"){};
     QString currentPath() const;
-    void setCurrentPath(const QString& value);
 
 public slots:
     void doGetCurrentPath();

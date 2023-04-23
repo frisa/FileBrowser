@@ -7,7 +7,7 @@
                 "~/Qt/6.5.0/macos/lib/QtCore.framework/Headers/**",
                 "~/Qt/6.5.0/macos/lib/QtGui.framework/Headers/**",
                 "~/Qt/6.5.0/macos/lib/QtCore.framework/Headers/**",
-                "~/Repositories/FileBrowser/inc/**"
+                "~/Repository/FileBrowser/inc/**"
             ],
             "defines": [],
             "macFrameworkPath": [
