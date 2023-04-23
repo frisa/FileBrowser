@@ -42,8 +42,9 @@ ApplicationWindow {
             }
         }
     }
-    footer: TabBar{
-        
+    footer: Text{
+        text: fileSystem.currentPath
+        color: "white"
     }
     StackView{
         anchors.fill: parent

@@ -19,14 +19,17 @@ target_include_directories(fileBrowser
         "~/Qt/6.5.0/macos/lib/QtCore.framework/Headers/**"
         "~/Qt/6.5.0/macos/lib/QtQml.framework/Headers/**"
         "~/Qt/6.5.0/macos/lib/QtGui.framework/Headers/**"
+        "~/Repositories/FileBrowser/inc/**"
     )
 
 target_sources(fileBrowser
     PRIVATE
         ./src/program.cpp
         ./src/SystemInfo.cpp
+        ./src/FileSystem.cpp
     PUBLIC
         ./inc/SystemInfo.hpp
+        ./inc/FileSystem.hpp
     )
 
 qt_standard_project_setup()
