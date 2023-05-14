@@ -48,10 +48,15 @@ ApplicationWindow {
         text: fileSystem.currentPath
         color: "white"
     }
-    TreeView {
+    Rectangle {
         anchors.fill: parent
-        model: fileSystemModel
-        delegate: TreeViewDelegate {
+        color: "white"
+        TreeView {
+            anchors.fill: parent
+            model: fileSystemModel
+            delegate: TreeViewDelegate {
+                onClicked: console.log("File: ", fileName)
+            }
         }
     }
 }
