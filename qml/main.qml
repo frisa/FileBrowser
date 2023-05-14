@@ -51,11 +51,48 @@ ApplicationWindow {
     Rectangle {
         anchors.fill: parent
         color: "white"
-        TreeView {
-            anchors.fill: parent
-            model: fileSystemModel
-            delegate: TreeViewDelegate {
-                onClicked: console.log("File: ", fileName)
+        TabBar {
+            id: bar
+            width: parent.width
+            TabButton {
+                text: "Browsing"
+            }
+            TabButton {
+                text: "FTP"
+            }
+            TabButton {
+                text: "Login"
+            }
+        }
+        StackView {
+            width: parent.width
+            height: parent.height - bar.height
+            currentIndex: bar.currentIndex
+            anchors{
+                top: bar.bottom
+            }
+            Item {
+                TreeView{
+                    anchors.fill: parent
+                    model: fileSystemModel
+                    delegate: TreeViewDelegate{
+
+                    }
+                }
+            }
+            Item {
+                id: ftp
+                Rectangle{
+                    anchors.fill: parent
+                    color: "green"
+                }
+            }
+            Item {
+                id: login
+                Rectangle{
+                    anchors.fill: parent
+                    color: "red"
+                }
             }
         }
     }

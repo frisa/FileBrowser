@@ -2,11 +2,13 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QFileSystemModel>
+#include <QQuickStyle>
 
 int main(int argc, char **argv)
 {
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
+    QQuickStyle::setStyle("macOS"); //this will force the macOS style an all platforms
 
     // setup the file system model
     QFileSystemModel* fileSysModel = new QFileSystemModel();

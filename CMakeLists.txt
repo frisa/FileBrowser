@@ -15,7 +15,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Gui)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Gui QuickControls2)
 
 qt_standard_project_setup()
 qt_add_executable(fileBrowser ./src/program.cpp)
@@ -44,4 +44,4 @@ qt_add_qml_module(fileBrowser
     QML_FILES  
         qml/main.qml)
 
-target_link_libraries(fileBrowser PRIVATE Qt6::Gui Qt6::Qml)
+target_link_libraries(fileBrowser PRIVATE Qt6::Gui Qt6::Qml Qt6::QuickControls2)
