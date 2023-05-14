@@ -26,10 +26,8 @@ target_sources(fileBrowser
     PRIVATE
         ./src/program.cpp
         ./src/SystemInfo.cpp
-        ./src/FileSystem.cpp
     PUBLIC
         ./inc/SystemInfo.hpp
-        ./inc/FileSystem.hpp
     )
 
 qt_standard_project_setup()

@@ -48,22 +48,17 @@ ApplicationWindow {
         text: fileSystem.currentPath
         color: "white"
     }
-    DelegateModel{
-        id: fileSystemModelDelegate
-        model: fileSystemModel
-        delegate: Rectangle{
-            height:25
-            width: 100
-            Text{
-                text: "Name:" + fileName
-            }
-        }
-    }
     StackView{
         anchors.fill: parent
-        initialItem: ListView{
+        initialItem: TreeView{
             anchors.fill: parent
-            model: fileSystemModelDelegate
+            model: fileSystemModel
+            delegate: Item{
+                Text{
+                    text: model.fileName
+                    color: "white"
+                }
+            }
         }
     }
 }
