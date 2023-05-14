@@ -52,7 +52,6 @@ ApplicationWindow {
         anchors.fill: parent
         model: fileSystemModel
         delegate: TreeViewDelegate {
-
         }
     }
 }
