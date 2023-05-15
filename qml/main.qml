@@ -54,6 +54,9 @@ ApplicationWindow {
         TabBar {
             id: bar
             width: parent.width
+            TabButton{
+                text: "Conputer Information"
+            }
             TabButton {
                 text: "Browsing"
             }
@@ -64,12 +67,21 @@ ApplicationWindow {
                 text: "Login"
             }
         }
-        StackView {
+        StackLayout {
             width: parent.width
             height: parent.height - bar.height
             currentIndex: bar.currentIndex
             anchors{
                 top: bar.bottom
+            }
+            Item{
+                Rectangle{
+                    anchors.fill: parent
+                    color: "blue"
+                    Label{
+                        text: sysInfo.getHostName()
+                    }
+                }
             }
             Item {
                 TreeView{

@@ -9,6 +9,16 @@
 
 #define HOST_NAME_MAX 255
 
+Q_INVOKABLE QString SystemInfo::getHostName()
+{
+    return QString(getComputerName().c_str());
+}
+
+Q_INVOKABLE void SystemInfo::setHostName(const QString &value)
+{
+    return void();
+}
+
 std::string SystemInfo::getComputerName()
 {
     char hostName[HOST_NAME_MAX];

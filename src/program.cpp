@@ -3,6 +3,9 @@
 #include <QQmlContext>
 #include <QFileSystemModel>
 #include <QQuickStyle>
+// custom header files
+#include "SystemInfo.hpp"
+
 
 int main(int argc, char **argv)
 {
@@ -14,6 +17,10 @@ int main(int argc, char **argv)
     QFileSystemModel* fileSysModel = new QFileSystemModel();
     fileSysModel->setRootPath(QDir::currentPath());
     engine.rootContext()->setContextProperty("fileSystemModel", fileSysModel);
+
+    // setup system info
+    SystemInfo* sysInfo = new SystemInfo();
+    engine.rootContext()->setContextProperty("sysInfo", sysInfo);
 
     // setup QML path to the QML engine
     const QUrl url(u"qrc:qt/qml/ui/main/main.qml"_qs);
