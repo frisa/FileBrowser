@@ -9,9 +9,14 @@
 
 #define HOST_NAME_MAX 255
 
-Q_INVOKABLE QString SystemInfo::getHostName()
+Q_INVOKABLE QString SystemInfo::getHostNameItf()
 {
     return QString(getComputerName().c_str());
+}
+
+Q_INVOKABLE QString SystemInfo::getCurrentDateItf()
+{
+    return Q_INVOKABLE QString("here is some date");
 }
 
 Q_INVOKABLE void SystemInfo::setHostName(const QString &value)

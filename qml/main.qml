@@ -77,9 +77,10 @@ ApplicationWindow {
             Item{
                 Rectangle{
                     anchors.fill: parent
-                    color: "blue"
-                    Label{
-                        text: sysInfo.getHostName()
+                    color: "#426cf5"
+                    FormField{
+                        title: "Computer Name"
+                        value: sysInfo.getHostNameItf()
                     }
                 }
             }

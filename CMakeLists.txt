@@ -42,6 +42,7 @@ qt_add_qml_module(fileBrowser
     RESOURCE_PREFIX 
         /qt/qml/ui
     QML_FILES  
-        qml/main.qml)
+        qml/main.qml
+        qml/FormField.qml)
 
 target_link_libraries(fileBrowser PRIVATE Qt6::Gui Qt6::Qml Qt6::QuickControls2)
