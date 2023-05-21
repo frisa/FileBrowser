@@ -2,17 +2,23 @@ import QtQuick
 import QtQuick.Layouts
 import models.sys 1.0
 
-Rectangle{
+Rectangle {
     color: "blue"
-    ListView{
+    ListView {
+        DynamicEntryModel {
+            id: dynamicModel
+            onCountChanged: {
+                print('new count: ' + dynamicModel.count)
+            }
+        }
         anchors.fill: parent
-        model: DynamicEntryModel{}
-        delegate: RowLayout{
-            Text{
+        model: dynamicModel
+        delegate: RowLayout {
+            Text {
                 color: "white"
                 text: model.name
             }
-            Text{
+            Text {
                 color: "white"
                 text: model.description
             }
