@@ -7,7 +7,7 @@ import models.sys 1.0
 
 Rectangle {
     color: "blue"
-    DynamicEntryModel{
+    DynamicEntryModel {
         id: dynamicModel
         onCountChanged: {
             print('new count: ' + dynamicModel.count)
@@ -26,15 +26,21 @@ Rectangle {
                     required property var model
                     width: ListView.view.width
                     text: model.name
-                    onClicked:{
+                    onClicked: {
                         view.currentIndex = model.index
                         view.focus = true
                     }
-                    onRemove:{
-                        dynamicMode.remove(model.index)
+                    onRemove: {
+                        dynamicModel.remove(model.index)
                     }
                 }
             }
         }
+        TextEntry {
+            id: textEntry
+            onAppend: function(name){
+            dynamicModel.append(name)
+        }
     }
+}
 }

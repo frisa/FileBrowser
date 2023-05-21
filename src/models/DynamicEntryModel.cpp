@@ -51,7 +51,8 @@ int DynamicEntryModel::getCount()
 
 Q_INVOKABLE DataEntry DynamicEntryModel::get(int index)
 {
-        if(index < 0 || index >= m_data.count()) {
+    if (index < 0 || index >= m_data.count())
+    {
         return DataEntry();
     }
     return m_data.at(index);
@@ -59,7 +60,8 @@ Q_INVOKABLE DataEntry DynamicEntryModel::get(int index)
 
 Q_INVOKABLE void DynamicEntryModel::insert(int index, const QString &value)
 {
-    if(index < 0 || index > m_data.count()) {
+    if (index < 0 || index > m_data.count())
+    {
         return;
     }
     DataEntry entry{value, "Added"};
@@ -78,7 +80,8 @@ Q_INVOKABLE void DynamicEntryModel::append(const QString &value)
 
 Q_INVOKABLE void DynamicEntryModel::remove(int index)
 {
-       if(index < 0 || index >= m_data.count()) {
+    if (index < 0 || index >= m_data.count())
+    {
         return;
     }
     emit beginRemoveRows(QModelIndex(), index, index);
