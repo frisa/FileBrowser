@@ -55,9 +55,11 @@ qt_add_qml_module(fileBrowser
         qml/components/FormField.qml
         qml/models/InfoList.qml
         qml/models/InfoListDelegate.qml
+        qml/models/ListDelegate.qml
         qml/models/DynamicView.qml
     RESOURCES
         images/icon.png
+        images/remove.png
     DEPENDENCIES
         QtQuick)
 
