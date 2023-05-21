@@ -36,13 +36,22 @@ target_sources(fileBrowser
     )
 
 set_source_files_properties(qml/main.qml PROPERTIES QT_RESOURCE_ALIAS main.qml)
+
 qt_add_qml_module(fileBrowser 
     URI 
         main
+    VERSION
+        1.0
     RESOURCE_PREFIX 
         /qt/qml/ui
     QML_FILES  
         qml/main.qml
-        qml/FormField.qml)
+        qml/components/FormField.qml
+        qml/models/InfoList.qml
+        qml/models/InfoListDelegate.qml
+    RESOURCES
+        images/icon.png
+    DEPENDENCIES
+        QtQuick)
 
 target_link_libraries(fileBrowser PRIVATE Qt6::Gui Qt6::Qml Qt6::QuickControls2)

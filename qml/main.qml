@@ -6,7 +6,6 @@ ApplicationWindow {
     width: 640
     height: 480
     visible: true
-
     menuBar: MenuBar {
         Menu {
             title: "&File"
@@ -24,7 +23,6 @@ ApplicationWindow {
             title: "&Help"
         }
     }
-
     header: ToolBar {
         RowLayout {
             ToolButton {
@@ -45,7 +43,7 @@ ApplicationWindow {
         }
     }
     footer: Text {
-        text: fileSystem.currentPath
+        text: "Here will be the current path"
         color: "white"
     }
     Rectangle {
@@ -54,8 +52,11 @@ ApplicationWindow {
         TabBar {
             id: bar
             width: parent.width
-            TabButton{
-                text: "Conputer Information"
+            TabButton {
+                text: "Listing Information"
+            }
+            TabButton {
+                text: "Computer Information"
             }
             TabButton {
                 text: "Browsing"
@@ -71,38 +72,48 @@ ApplicationWindow {
             width: parent.width
             height: parent.height - bar.height
             currentIndex: bar.currentIndex
-            anchors{
+            anchors {
                 top: bar.bottom
             }
-            Item{
-                Rectangle{
+            Item {
+                Rectangle {
+                    anchors.fill: parent
+                    color: "green"
+                    ListView {
+                        anchors.fill: parent
+                        model: InfoList {}
+                        delegate: InfoListDelegate {}
+                    }
+                }
+            }
+            Item {
+                TreeView {
+                    anchors.fill: parent
+                    model: fileSystemModel
+                    delegate: TreeViewDelegate {
+                    }
+                }
+            }
+            Item {
+                Rectangle {
                     anchors.fill: parent
                     color: "#426cf5"
-                    FormField{
+                    FormField {
                         title: "Computer Name"
                         value: sysInfo.getHostNameItf()
                     }
                 }
             }
             Item {
-                TreeView{
-                    anchors.fill: parent
-                    model: fileSystemModel
-                    delegate: TreeViewDelegate{
-
-                    }
-                }
-            }
-            Item {
                 id: ftp
-                Rectangle{
+                Rectangle {
                     anchors.fill: parent
                     color: "green"
                 }
             }
             Item {
                 id: login
-                Rectangle{
+                Rectangle {
                     anchors.fill: parent
                     color: "red"
                 }
