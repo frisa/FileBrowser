@@ -5,8 +5,10 @@ import models.sys 1.0
 
 // https://www.qt.io/product/qt6/qml-book/ch17-qtcpp-cpp-models needs to be finished
 
-Rectangle {
-    color: "blue"
+Item {
+    Background {
+        id: backgroud
+    }
     DynamicEntryModel {
         id: dynamicModel
         onCountChanged: {
@@ -34,6 +36,7 @@ Rectangle {
                         dynamicModel.remove(model.index)
                     }
                 }
+                highlight: ListHighlight {}
             }
         }
         TextEntry {

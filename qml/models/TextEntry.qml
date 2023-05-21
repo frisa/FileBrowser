@@ -9,6 +9,17 @@ RowLayout{
     function setAppendValue(text){
         textField.text = text
     }
+
+    function setEditValue(index, text){
+        internal.index = index
+        textField.text = text
+    }
+
+    QtObject{
+        id: internal
+        property int index
+    }
+
     TextField{
         id: textField
         Layout.fillWidth: true
@@ -16,6 +27,13 @@ RowLayout{
         focus: true
         onAccepted: {
             selectAll()
+        }
+    }
+    Button{
+        id: buttonEdit
+        text: "Edit"
+        onClicked: {
+            root.edit(internal.index, textField.text)
         }
     }
     Button{

@@ -58,6 +58,8 @@ qt_add_qml_module(fileBrowser
         qml/models/ListDelegate.qml
         qml/models/DynamicView.qml
         qml/models/TextEntry.qml
+        qml/models/ListHighlight.qml
+        qml/models/Background.qml
     RESOURCES
         images/icon.png
         images/remove.png
