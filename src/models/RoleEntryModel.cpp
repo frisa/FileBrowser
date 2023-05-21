@@ -1,6 +1,6 @@
 #include "RoleEntryModel.hpp"
 
-RoleEntryRole::RoleEntryRole(QObject *parent) : QAbstractListModel(parent)
+RoleEntryModel::RoleEntryModel(QObject *parent) : QAbstractListModel(parent)
 {
     m_roleNames[NameRole] = "name";
     m_roleNames[HueRole] = "hue";
@@ -13,18 +13,18 @@ RoleEntryRole::RoleEntryRole(QObject *parent) : QAbstractListModel(parent)
     }
 }
 
-RoleEntryRole::~RoleEntryRole()
+RoleEntryModel::~RoleEntryModel()
 {
 }
 
-int RoleEntryRole::rowCount(const QModelIndex &parent) const
+int RoleEntryModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return m_data.count();
     return 0;
 }
 
-QVariant RoleEntryRole::data(const QModelIndex &index, int role) const
+QVariant RoleEntryModel::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if (row < 0 || row >= m_data.count())
@@ -32,7 +32,7 @@ QVariant RoleEntryRole::data(const QModelIndex &index, int role) const
         return QVariant();
     }
     const QColor &color = m_data.at(row);
-    qDebug() << row << role << color;
+    //qDebug() << row << role << color;
     switch (role)
     {
     case NameRole:
@@ -47,7 +47,7 @@ QVariant RoleEntryRole::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QHash<int, QByteArray> RoleEntryRole::roleNames() const
+QHash<int, QByteArray> RoleEntryModel::roleNames() const
 {
     return m_roleNames;
 }

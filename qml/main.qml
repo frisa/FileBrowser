@@ -54,6 +54,9 @@ ApplicationWindow {
         TabBar {
             id: bar
             width: parent.width
+            TabButton{
+                text: "Dynamic"
+            }
             TabButton {
                 text: "Table Information"
             }
@@ -79,6 +82,26 @@ ApplicationWindow {
             currentIndex: bar.currentIndex
             anchors {
                 top: bar.bottom
+            }
+            Item{
+                Rectangle{
+                    anchors.fill: parent
+                    color: "lightgreen"
+                    ListView{
+                        anchors.fill: parent
+                        model: DynamicEntryModel{}
+                        delegate: Component{
+                            RowLayout{
+                                Text{
+                                    text: model.name
+                                }
+                                Text{
+                                    text: model.description
+                                }
+                            }
+                        }
+                    }
+                }
             }
             Item {
                 Rectangle {

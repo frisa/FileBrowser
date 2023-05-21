@@ -1,16 +1,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickStyle>
 
 // Models
 #include <QFileSystemModel>
 #include "models/DataEntryModel.hpp"
 #include "models/RoleEntryModel.hpp"
+#include "models/DynamicEntryModel.hpp"
 
-#include <QQuickStyle>
 // custom header files
 #include "SystemInfo.hpp"
-
 
 int main(int argc, char **argv)
 {
@@ -27,7 +27,10 @@ int main(int argc, char **argv)
     qmlRegisterType<DataEntryModel>("models.sys", 1, 0, "DataEntryModel");
 
     // register the RoleEntryModel
-    qmlRegisterType<RoleEntryRole>("models.sys", 1, 0, "RoleEntryModel");
+    qmlRegisterType<RoleEntryModel>("models.sys", 1, 0, "RoleEntryModel");
+
+    // register dynamic model
+    qmlRegisterType<DynamicEntryModel>("models.sys", 1, 0, "DynamicEntryModel");
 
     // setup system info
     SystemInfo* sysInfo = new SystemInfo();

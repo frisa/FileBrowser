@@ -5,7 +5,7 @@
 #include <QColor>
 #include <QByteArray>
 
-class RoleEntryRole: public QAbstractListModel
+class RoleEntryModel: public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -16,8 +16,8 @@ public:
         SaturationRole = Qt::UserRole + 3,
         BrightnessRole = Qt::UserRole + 4
     };
-    explicit RoleEntryRole(QObject * parent = 0);
-    ~RoleEntryRole();
+    explicit RoleEntryModel(QObject * parent = 0);
+    ~RoleEntryModel();
 public:
     // QAbstractItemModel interface 
     virtual int rowCount(const QModelIndex &parent) const override;

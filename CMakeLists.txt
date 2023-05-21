@@ -33,10 +33,12 @@ target_sources(fileBrowser
         src/SystemInfo.cpp
         src/models/DataEntryModel.cpp
         src/models/RoleEntryModel.cpp
+        src/models/DynamicEntryModel.cpp
     PUBLIC
         inc/SystemInfo.hpp
         src/models/DataEntryModel.hpp
         src/models/RoleEntryModel.hpp
+        src/models/DynamicEntryModel.hpp
     )
 
 set_source_files_properties(qml/main.qml PROPERTIES QT_RESOURCE_ALIAS main.qml)
