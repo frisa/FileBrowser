@@ -2,6 +2,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
+import models.sys 1.0
+
 ApplicationWindow {
     width: 640
     height: 480
@@ -74,6 +76,21 @@ ApplicationWindow {
             currentIndex: bar.currentIndex
             anchors {
                 top: bar.bottom
+            }
+            Item{
+                Rectangle{
+                    anchors.fill: parent
+                    color: "lightgreen"
+                    ListView{
+                        anchors.fill: parent
+                        model: DataEntryModel{}
+                        delegate: Component{
+                            Text{
+                                text: model.display
+                            }
+                        }
+                    }
+                }
             }
             Item {
                 Rectangle {

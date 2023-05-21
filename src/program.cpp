@@ -1,7 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+
+// Models
 #include <QFileSystemModel>
+#include "models/DataEntryModel.hpp"
+
 #include <QQuickStyle>
 // custom header files
 #include "SystemInfo.hpp"
@@ -17,6 +21,9 @@ int main(int argc, char **argv)
     QFileSystemModel* fileSysModel = new QFileSystemModel();
     fileSysModel->setRootPath(QDir::currentPath());
     engine.rootContext()->setContextProperty("fileSystemModel", fileSysModel);
+
+    // register the DataEntryModel
+    qmlRegisterType<DataEntryModel>("models.sys", 1, 0, "DataEntryModel");
 
     // setup system info
     SystemInfo* sysInfo = new SystemInfo();
