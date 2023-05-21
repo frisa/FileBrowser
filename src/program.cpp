@@ -5,6 +5,7 @@
 // Models
 #include <QFileSystemModel>
 #include "models/DataEntryModel.hpp"
+#include "models/RoleEntryModel.hpp"
 
 #include <QQuickStyle>
 // custom header files
@@ -24,6 +25,9 @@ int main(int argc, char **argv)
 
     // register the DataEntryModel
     qmlRegisterType<DataEntryModel>("models.sys", 1, 0, "DataEntryModel");
+
+    // register the RoleEntryModel
+    qmlRegisterType<RoleEntryRole>("models.sys", 1, 0, "RoleEntryModel");
 
     // setup system info
     SystemInfo* sysInfo = new SystemInfo();

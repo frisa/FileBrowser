@@ -32,9 +32,11 @@ target_sources(fileBrowser
         src/program.cpp
         src/SystemInfo.cpp
         src/models/DataEntryModel.cpp
+        src/models/RoleEntryModel.cpp
     PUBLIC
         inc/SystemInfo.hpp
         src/models/DataEntryModel.hpp
+        src/models/RoleEntryModel.hpp
     )
 
 set_source_files_properties(qml/main.qml PROPERTIES QT_RESOURCE_ALIAS main.qml)

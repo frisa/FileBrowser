@@ -55,6 +55,9 @@ ApplicationWindow {
             id: bar
             width: parent.width
             TabButton {
+                text: "Table Information"
+            }
+            TabButton {
                 text: "Listing Information"
             }
             TabButton {
@@ -77,64 +80,87 @@ ApplicationWindow {
             anchors {
                 top: bar.bottom
             }
-            Item{
-                Rectangle{
+            Item {
+                Rectangle {
                     anchors.fill: parent
-                    color: "lightgreen"
-                    ListView{
+                    color: "white"
+                    ListView {
                         anchors.fill: parent
-                        model: DataEntryModel{}
-                        delegate: Component{
-                            Text{
-                                text: model.display
+                        model: RoleEntryModel {}
+                        delegate: Component {
+                            RowLayout {
+                                Text { text: 'hsv(' +
+                                    Number(model.hue).toFixed(2) + ', ' +
+                                    Number(model.saturation).toFixed() + ', ' +
+                                    Number(model.brightness).toFixed() + ')'}
+                                }
                             }
                         }
                     }
                 }
-            }
-            Item {
-                Rectangle {
-                    anchors.fill: parent
-                    color: "green"
-                    ListView {
+                Item {
+                    Rectangle {
                         anchors.fill: parent
-                        model: InfoList {}
-                        delegate: InfoListDelegate {}
+                        color: "lightgreen"
+                        ListView {
+                            anchors.fill: parent
+                            model: DataEntryModel {}
+                            delegate: Component {
+                                Text {
+                                    text: model.display
+                                }
+                            }
+                            highlight: Component {
+                                Rectangle {
+                                    color: "blue"
+                                }
+                            }
+                        }
                     }
                 }
-            }
-            Item {
-                TreeView {
-                    anchors.fill: parent
-                    model: fileSystemModel
-                    delegate: TreeViewDelegate {
+                Item {
+                    Rectangle {
+                        anchors.fill: parent
+                        color: "green"
+                        ListView {
+                            anchors.fill: parent
+                            model: InfoList {}
+                            delegate: InfoListDelegate {}
+                        }
                     }
                 }
-            }
-            Item {
-                Rectangle {
-                    anchors.fill: parent
-                    color: "#426cf5"
-                    FormField {
-                        title: "Computer Name"
-                        value: sysInfo.getHostNameItf()
+                Item {
+                    TreeView {
+                        anchors.fill: parent
+                        model: fileSystemModel
+                        delegate: TreeViewDelegate {
+                        }
                     }
                 }
-            }
-            Item {
-                id: ftp
-                Rectangle {
-                    anchors.fill: parent
-                    color: "green"
+                Item {
+                    Rectangle {
+                        anchors.fill: parent
+                        color: "#426cf5"
+                        FormField {
+                            title: "Computer Name"
+                            value: sysInfo.getHostNameItf()
+                        }
+                    }
                 }
-            }
-            Item {
-                id: login
-                Rectangle {
-                    anchors.fill: parent
-                    color: "red"
+                Item {
+                    id: ftp
+                    Rectangle {
+                        anchors.fill: parent
+                        color: "green"
+                    }
+                }
+                Item {
+                    id: login
+                    Rectangle {
+                        anchors.fill: parent
+                        color: "red"
+                    }
                 }
             }
         }
     }
-}
