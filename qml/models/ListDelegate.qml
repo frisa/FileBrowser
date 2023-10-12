@@ -41,7 +41,7 @@ Item {
                 Rectangle {
                     id: icon
                     anchors.fill: parent
-                    color: "red"
+                    color: "#ba544c"
                 }
                 MouseArea {
                     anchors.fill: parent

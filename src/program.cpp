@@ -11,6 +11,7 @@
 
 // custom header files
 #include "SystemInfo.hpp"
+#include <iostream>
 
 int main(int argc, char **argv)
 {

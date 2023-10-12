@@ -32,7 +32,7 @@ QVariant RoleEntryModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
     const QColor &color = m_data.at(row);
-    //qDebug() << row << role << color;
+    qDebug() << row << role << color;
     switch (role)
     {
     case NameRole:
