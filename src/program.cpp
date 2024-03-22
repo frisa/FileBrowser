@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QFileSystemModel>
-#include "FileSystem.hpp"
+#include "../inc/FileSystem.hpp"
 
 int main(int argc, char **argv)
 {

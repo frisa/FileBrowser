@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.1...3.26)
 IF(APPLE)
     set(CMAKE_PREFIX_PATH "/Users/jan/Qt/6.5.0/macos/lib/cmake/Qt6")
 ELSE()
-    set(CMAKE_PREFIX_PATH "/home/jan/Qt/6.5.0/gcc_64")
+    set(CMAKE_PREFIX_PATH "/home/frid/Qt/6.6.2/gcc_64")
 ENDIF()
 
 project(FileBrowser VERSION 1.0 LANGUAGES CXX)
